@@ -19,3 +19,5 @@ if __name__ =='__main__':
     resultado = ArraySumaSimple(ar)
 
     fptr.write(str(resultado),'\n')
+
+    fptr.close()
