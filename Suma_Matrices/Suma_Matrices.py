@@ -13,9 +13,16 @@ import sys
 #
 def simpleArraySum(ar):
 
-# Write your code here
+    tam = len(ar)
+    suma = 0
+
+    for i in range(tam):
+        suma = suma + ar[i]
+
+    return suma
 
 def main():
+    os.environ['OUTPUT_PATH'] = 'Resultado.txt'
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
     ar_count = int(input().strip())
     ar = list(map(int, input().rstrip().split()))
@@ -26,4 +33,6 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
 
