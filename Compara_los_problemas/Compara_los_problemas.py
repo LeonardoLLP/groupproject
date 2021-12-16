@@ -21,8 +21,7 @@ def compareTriplets(a, b):
         elif(a[i]<b[i]):
             puntos_b=puntos_b+1
         #No hace falta else porque si se da el caso de que sean iguales no hay que hacer nada
-    return str(puntos_a)+" "+str(puntos_b)
-        
+    return str(puntos_a)+" "+str(puntos_b)      
 
 def main():
     os.environ['OUTPUT_PATH'] = 'Comparacion_Lucia_Carlos.txt'

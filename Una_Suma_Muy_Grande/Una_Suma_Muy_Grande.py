@@ -12,6 +12,13 @@ import sys
 #
 def aVeryBigSum(ar):
     
+    tamaño = len(ar)
+    suma = 0
+
+    for i in range(tamaño):
+        suma = suma + ar[i]
+
+    return suma
 
 def main():
     os.environ['OUTPUT_PATH'] = 'Suma_Muy_Grande.txt'

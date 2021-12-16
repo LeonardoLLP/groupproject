@@ -30,9 +30,5 @@ def main():
     fptr.write(str(result) + '\n')
     fptr.close()
 
-
 if __name__ == '__main__':
     main()
-
-
-
