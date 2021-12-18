@@ -14,7 +14,13 @@ def gameOfStones(n):
     # Como tenemos los cinco primeros valores, crearemos una lista con los valores iniciales que nos ha proporcionado el documento.
     # Cada valor comprobará los índice
     # Si en alguno puede ganar, gana
-    pass
+
+    # Valores iniciales
+    values = [2, 1, 1, 1, 1]
+
+    if n > 6:
+        for i in range(5, n):
+            values_to_check = [values[n-j] for j in [2, 3, 5]]
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
