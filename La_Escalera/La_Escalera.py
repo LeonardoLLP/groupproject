@@ -20,7 +20,8 @@ def staircase(n):
             print("#",end="")
         print()
         #solo se podria hacer como en el ejemplo mostrado en el enunciado
-        #si se pudiesen usar medios caracteres
+        #si se pudiesen usar medios caracteres,porque la diferencia entre una fila
+        #y la siguiente es medio caracter
 
 if __name__ == '__main__':
     n = int(input().strip())
