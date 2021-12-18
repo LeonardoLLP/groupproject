@@ -15,7 +15,15 @@ import sys
 # 6. INTEGER_ARRAY oranges
 
 def countApplesAndOranges(s, t, a, b, apples, oranges):
-    # Write your code here
+    t_apples = 0
+    for apple in apples:
+        if s <= a + apple <= t:
+            t_apples += 1
+
+    t_oranges = 0
+    for orange in oranges:
+        if s <= b + orange <= t:
+            t_oranges += 1
     pass
 
 if __name__ == '__main__':
