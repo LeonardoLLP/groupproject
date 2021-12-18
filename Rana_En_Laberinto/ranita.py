@@ -26,3 +26,22 @@ if __name__ == '__main__':
 
     # Write your code here
 
+"""Tengo una idea para que esto funcione pero está mmuy loca. Intentaré explicarla.
+
+La ranita se mueve al azar a cada una de sus casillas adyacentes posibles. Lo que vamos a hacer es ir anotando:
+
+1. Las casillas por las que pasa
+2. Las diferentes probabilidades que hay de que llegue allí
+3. Las casillas que está probando en un momento determinado.
+
+A medida que va progresando, la rana volverá a casilla que ha probado. Entonces, anotará la probabilidad que tenía en ese momento de llegar ahí y eliminará ese arbol.
+
+La rana seguirá y llegará a una mina o a una salida. En ese momento se detiene ese arbol.
+
+Se comprueba entonces la probabilidad de llegar a una mina o a la salida y ya está.
+
+20 veces más complicado de lo que suena.
+
+
+"""
+
