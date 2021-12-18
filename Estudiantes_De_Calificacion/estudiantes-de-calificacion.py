@@ -5,8 +5,12 @@ import re
 import sys
 
 def gradingStudents(grades):
-    # Write your code here
-    pass
+    if grades < 40:
+        return grades
+    elif grades % 5 < 3:
+        return grades + (grades % 5)
+    else:
+        return grades
 
 if __name__ == "__main__":
     os.environ["OUTPUT_PATH"] = "Estudiantes_De_Calificacion/calificaciones.txt"
