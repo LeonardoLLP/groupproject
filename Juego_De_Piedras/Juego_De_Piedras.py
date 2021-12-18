@@ -18,9 +18,9 @@ def gameOfStones(n):
     # Valores iniciales
     values = [2, 1, 1, 1, 1]
 
-    if n > 6:
+    if n >= 6:
         for i in range(5, n):
-            values_to_check = [values[n-j] for j in [2, 3, 5]]
+            values_to_check = [values[i-j] for j in [2, 3, 5]]
             if 2 in values_to_check:  # Después de un movimiento el jugador uno es como el jugador dos: si puede llegar a una situación en la que el jugador dos gana, entonces gana
                 values.append(1)
             else:
@@ -28,7 +28,10 @@ def gameOfStones(n):
 
     print(values)
 
+    return ""
+
 if __name__ == '__main__':
+    os.environ['OUTPUT_PATH'] = "juego-piedas.txt"
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
     t = int(input().strip())
     for t_itr in range(t):
