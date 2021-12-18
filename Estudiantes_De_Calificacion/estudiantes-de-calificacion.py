@@ -5,9 +5,7 @@ import re
 import sys
 
 def gradingStudents(grades):
-    if grades < 40:
-        return grades
-    elif grades % 5 < 3:
+    if grades % 5 < 3 and grades >= 40:
         return grades + (grades % 5)
     else:
         return grades
