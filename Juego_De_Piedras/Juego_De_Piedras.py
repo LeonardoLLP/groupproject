@@ -26,18 +26,20 @@ def gameOfStones(n):
     #             values.append(1)
     #         else:
     #             values.append(2)
+    #
+    # if values[n-1] == 1:
+    #     return "Player 1 won the game"
+    # else:
+    #     return "Player 2 won the game"
 
+    rocks = "Number of rocks: {}".format(n)
     if n % 7 in [0, 1]:
-        return "Player 2 won the game"
+        return "Player 2 won the game ({})".format(rocks)
     else:
-        return "Player 1 won the game"
+        return "Player 1 won the game ({})".format(rocks)
 
     print(values)
 
-    if values[n-1] == 1:
-        return "Player 1 won the game"
-    else:
-        return "Player 2 won the game"
 
 if __name__ == '__main__':
     os.environ['OUTPUT_PATH'] = "Juego_De_Piedras/juego-piedas.txt"
