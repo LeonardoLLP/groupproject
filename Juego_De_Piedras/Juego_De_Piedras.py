@@ -19,18 +19,18 @@ def gameOfStones(n):
     values = [2, 1, 1, 1, 1]
 
     #! HOW I FOUND THE TRICK:
-    if n >= 6:
-        for i in range(5, n):
-            values_to_check = [values[i-j] for j in [2, 3, 5]]
-            if 2 in values_to_check:  # Después de un movimiento el jugador uno es como el jugador dos: si puede llegar a una situación en la que el jugador dos gana, entonces gana
-                values.append(1)
-            else:
-                values.append(2)
+    # if n >= 6:
+    #     for i in range(5, n):
+    #         values_to_check = [values[i-j] for j in [2, 3, 5]]
+    #         if 2 in values_to_check:  # Después de un movimiento el jugador uno es como el jugador dos: si puede llegar a una situación en la que el jugador dos gana, entonces gana
+    #             values.append(1)
+    #         else:
+    #             values.append(2)
 
-    # if n % 7 in [0, 1]
-    #     return "Player 1 won the game"
-    # else:
-    #     return "Player 2 won the game"
+    if n % 7 in [0, 1]:
+        return "Player 2 won the game"
+    else:
+        return "Player 1 won the game"
 
     print(values)
 
