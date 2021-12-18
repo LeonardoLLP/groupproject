@@ -18,6 +18,7 @@ def gameOfStones(n):
     # Valores iniciales
     values = [2, 1, 1, 1, 1]
 
+    #! HOW I FOUND THE TRICK:
     if n >= 6:
         for i in range(5, n):
             values_to_check = [values[i-j] for j in [2, 3, 5]]
@@ -25,6 +26,11 @@ def gameOfStones(n):
                 values.append(1)
             else:
                 values.append(2)
+
+    # if n % 7 in [0, 1]
+    #     return "Player 1 won the game"
+    # else:
+    #     return "Player 2 won the game"
 
     print(values)
 
@@ -34,7 +40,7 @@ def gameOfStones(n):
         return "Player 2 won the game"
 
 if __name__ == '__main__':
-    os.environ['OUTPUT_PATH'] = "juego-piedas.txt"
+    os.environ['OUTPUT_PATH'] = "Juego_De_Piedras/juego-piedas.txt"
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
     t = int(input().strip())
     for t_itr in range(t):
