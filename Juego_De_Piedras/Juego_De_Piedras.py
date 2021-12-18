@@ -10,7 +10,10 @@ import sys
 # The function accepts INTEGER n as parameter.
 
 def gameOfStones(n):
-    # Write your code here
+    # Vamos a emplear un método regresivo
+    # Como tenemos los cinco primeros valores, crearemos una lista con los valores iniciales que nos ha proporcionado el documento.
+    # Cada valor comprobará los índice
+    # Si en alguno puede ganar, gana
     pass
 
 if __name__ == '__main__':
