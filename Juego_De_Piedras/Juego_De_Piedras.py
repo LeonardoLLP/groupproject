@@ -28,7 +28,10 @@ def gameOfStones(n):
 
     print(values)
 
-    return ""
+    if values[n-1] == 1:
+        return "Player 1 won the game"
+    else:
+        return "Player 2 won the game"
 
 if __name__ == '__main__':
     os.environ['OUTPUT_PATH'] = "juego-piedas.txt"
@@ -36,6 +39,6 @@ if __name__ == '__main__':
     t = int(input().strip())
     for t_itr in range(t):
         n = int(input().strip())
-    result = gameOfStones(n)
-    fptr.write(result + '\n')
+        result = gameOfStones(n)
+        fptr.write(result + '\n')
     fptr.close()
