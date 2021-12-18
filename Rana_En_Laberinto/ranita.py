@@ -15,6 +15,7 @@ for n_itr in range(n):
     row = input()
     # Write your code here
     pass
+
 for k_itr in range(k):
     second_multiple_input = input().rstrip().split()
     i1 = int(second_multiple_input[0])
@@ -41,5 +42,12 @@ La rana seguirá y llegará a una mina o a una salida. En ese momento se detiene
 Se comprueba entonces la probabilidad de llegar a una mina o a la salida y ya está.
 
 20 veces más complicado de lo que suena.
+
+
+Por ahora, obviaremos repeticiones de casillas. La rana no puede volver a su misma casilla.
+
+Sería como no haber empezado, y como puede pasar con cada casilla, lo obviamos. Sin embargo, incluimos ir a una casilla de otro camino como válido, sumando la probabilidad
+del camino del que venimos.
+
 """
 
