@@ -7,8 +7,8 @@ import sys
 def gradingStudents(grades):
     final_grades = []
     for grade in grades:
-        to_next_multiple = 5 - (grades % 5)
-        if to_next_multiple < 3 and grades >= 40:
+        to_next_multiple = 5 - (grade % 5)
+        if to_next_multiple < 3 and grade >= 40:
             final_grades.append(grade + to_next_multiple)
         else:
             final_grades.append(grade)
