@@ -49,26 +49,31 @@ board = [
 
 # board.append(["#" for _ in range(m + 2)])
 
-#? Print board
-# for row in board:
-#     print("[", end="")
-#     for index in range(len(row)):
-#         if index != len(row) - 1:
-#             print("{:6}".format("\'" + row[index] + "\', "), end="")
-#         else:
-#             print("{:6}".format("\'" + row[index] + "\'"), end="")
-#     print("]")
+def printBoard():
+    for row in board:
+        print("[", end="")
+        for index in range(len(row)):
+            if index != len(row) - 1:
+                print("{:6}".format("\'" + row[index] + "\', "), end="")
+            else:
+                print("{:6}".format("\'" + row[index] + "\'"), end="")
+        print("]")
 
 
 
-#! --- Frog setup 
+#! --- Frog setup
 start = None
 for index in range(len(board)):
     if "a" in board[index]:
         start = (index, board[index].index("a"))
+board[start[0]][start[1]] = ""
+
 
 frog = list(start)
-board[start[0]][start[1]] = ""
+
+def resetFrog():
+    frog[0] = start[0]
+    frog[1] = start[1]
 
 
 
@@ -117,6 +122,8 @@ def checkFrog():
 
 # x: possible moves to complete the laberinth
 def resultOfPath(x: int):
+    print("-" * 40)
+    resetFrog()
     for _ in range(x):
         situation = moveFrog()
         if situation == "blocked":
@@ -138,6 +145,13 @@ def resultOfPath(x: int):
 
 plays = []
 
+for _ in range(10):
+    plays.append(resultOfPath(100))
+
+
+print(plays)
+print(board)
+printBoard()
 
 
 
