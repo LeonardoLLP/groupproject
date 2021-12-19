@@ -160,29 +160,20 @@ def resultOfPath(x: int):
 
 
 #! --- Code
-t_plays = 10000
+t_plays = 1000000
 plays = []
 
-s_time = time()
+print("Please wait while we process the answer ...")
 for _ in range(t_plays):
     plays.append(resultOfPath(100))
 
-print(time() - s_time)
-
-
-t_time = time()
 
 # print(plays)
-print(board)
 printBoard()
-
-print(type((1, 2)) == tuple)
 
 exited = plays.count(True)
 escape_prob = exited / (t_plays - plays.count(None))
 
-print("{:10}".format(escape_prob))
-
-print(time() - s_time)
+print("Probability that the frog escapes: {:10}".format(escape_prob))
 
 #! Multiprocessing module para meter más repeticiones
