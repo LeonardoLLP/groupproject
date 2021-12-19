@@ -9,7 +9,7 @@ first_multiple_input = input("Rows, columns and tunels:").rstrip().split()
 
 n = int(first_multiple_input[0])
 m = int(first_multiple_input[1])
-k = int(first_multiple_input[2])
+# k = int(first_multiple_input[2])
 
 #! Board setup
 # Legend
@@ -20,20 +20,32 @@ print("%: Exit")
 print("W: Free space")
 
 board = []
-board.append([])
-for n_itr in range(n):
-    row_chars = input("Type ")
-    # Write your code here
-    pass
+board.append(["#" for _ in range(m + 1)])
 
-for k_itr in range(k):
-    second_multiple_input = input().rstrip().split()
-    i1 = int(second_multiple_input[0])
-    j1 = int(second_multiple_input[1])
-    i2 = int(second_multiple_input[2])
-    j2 = int(second_multiple_input[3])
-    # Write your code here
-    pass
+#* Adding rows
+for n_itr in range(n):
+    row_list = input("Type row: ").rstrip().split()
+    row_obstacles = []
+
+    row_obstacles.append("#")
+    for space in row_list:
+        pass
+    row_obstacles.append("#")
+
+
+board.append(["#" for _ in range(m + 1)])
+
+
+
+
+# for k_itr in range(k):
+#     second_multiple_input = input().rstrip().split()
+#     i1 = int(second_multiple_input[0])
+#     j1 = int(second_multiple_input[1])
+#     i2 = int(second_multiple_input[2])
+#     j2 = int(second_multiple_input[3])
+#     # Write your code here
+#     pass
 
 # Write your code here
 
