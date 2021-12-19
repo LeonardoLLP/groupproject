@@ -5,7 +5,7 @@ import re
 import sys
 # if __name__ == '__main__':
 
-first_multiple_input = input("Rows, columns and tunels:").rstrip().split()
+first_multiple_input = input("Rows, columns and tunels: ").rstrip().split()
 
 n = int(first_multiple_input[0])
 m = int(first_multiple_input[1])
@@ -22,11 +22,11 @@ print("W: Free space")
 possibilities = ["#", "A", "M", "%"]
 
 board = []
-board.append(["#" for _ in range(m + 1)])
+board.append(["#" for _ in range(m + 2)])
 
 #* Adding rows
 for n_itr in range(n):
-    row_list = input("Type row: ").rstrip().split(maxsplit = m)
+    row_list = input("Type row: ").rstrip().casefold().split(maxsplit = m)
     row_obstacles = []
 
     row_obstacles.append("#")
@@ -36,13 +36,22 @@ for n_itr in range(n):
         else:
             row_obstacles.append("")
 
-
-
-
     row_obstacles.append("#")
 
+    board.append(row_obstacles)
 
-board.append(["#" for _ in range(m + 1)])
+
+board.append(["#" for _ in range(m + 2)])
+
+# Print board
+for row in board:
+    print("[", end="")
+    for index in range(len(row)):
+        if index != len(row) - 1:
+            print("{:6}".format("\'" + row[index] + "\', "), end="")
+        else:
+            print("{:6}".format("\'" + row[index] + "\'"), end="")
+    print("]")
 
 #! ---End--- Board setup
 
