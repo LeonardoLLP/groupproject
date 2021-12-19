@@ -59,7 +59,6 @@ board = [
 #             print("{:6}".format("\'" + row[index] + "\'"), end="")
 #     print("]")
 
-print(board)
 
 #! ---End--- Board setup
 
@@ -70,13 +69,10 @@ for index in range(len(board)):
     if "a" in board[index]:
         start = (index, board[index].index("a"))
 
-print(start)
-
 frog = list(start)
 board[start[0]][start[1]] = ""
 
 
-print(board)
 
 #! ---End--- Frog setup
 
@@ -85,20 +81,28 @@ print(board)
 print(frog)
 
 moves_list = [(0, 1), (0, -1), (1, 0), (-1, 0)]
-possible_moves = [[frog[i] + move[i] for i in range(2)] for move in moves_list]
-print(possible_moves)
 
-for move in possible_moves:
-    if board[move[0]][move[1]] == "#":
-        possible_moves.remove(move)
+def moveFrog():
+    print(frog)
+    possible_moves = [[frog[i] + move[i] for i in range(2)] for move in moves_list]
 
-print(possible_moves)
+    # Remove not available moves
+    for move in possible_moves:
+        if board[move[0]][move[1]] == "#":
+            possible_moves.remove(move)
 
-choose_move = randint(0, len(possible_moves) - 1)
+    print(possible_moves)
 
-frog = list(possible_moves[choose_move])
+    choose_move = randint(0, len(possible_moves) - 1)
 
-print(frog)
+    for i in range(2):
+        frog[i] = possible_moves[choose_move][i]
+
+    print(frog)
+    print()
+
+for _ in range(10):
+    moveFrog()
 
 
 
