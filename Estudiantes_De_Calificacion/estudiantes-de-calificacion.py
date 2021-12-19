@@ -5,10 +5,12 @@ import re
 import sys
 
 def gradingStudents(grades):
-    if grades % 5 < 3 and grades >= 40:
-        return grades + (grades % 5)
-    else:
-        return grades
+    for grade in grades:
+        to_next_multiple = 5 - (grades % 5)
+        if to_next_multiple < 3 and grades >= 40:
+            return grade + to_next_multiple
+        else:
+            return grade
 
 if __name__ == "__main__":
     os.environ["OUTPUT_PATH"] = "Estudiantes_De_Calificacion/calificaciones.txt"
