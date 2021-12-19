@@ -11,7 +11,7 @@ n = int(first_multiple_input[0])
 m = int(first_multiple_input[1])
 # k = int(first_multiple_input[2])
 
-#! Board setup
+#! ---Start--- Board setup
 # Legend
 print("#: Obstacle")
 print("A: Start")
@@ -19,23 +19,32 @@ print("M: Mine")
 print("%: Exit")
 print("W: Free space")
 
+possibilities = ["#", "A", "M", "%"]
+
 board = []
 board.append(["#" for _ in range(m + 1)])
 
 #* Adding rows
 for n_itr in range(n):
-    row_list = input("Type row: ").rstrip().split()
+    row_list = input("Type row: ").rstrip().split(maxsplit = m)
     row_obstacles = []
 
     row_obstacles.append("#")
     for space in row_list:
-        pass
+        if space in possibilities:
+            row_obstacles.append(space)
+        else:
+            row_obstacles.append("")
+
+
+
+
     row_obstacles.append("#")
 
 
 board.append(["#" for _ in range(m + 1)])
 
-
+#! ---End--- Board setup
 
 
 # for k_itr in range(k):
