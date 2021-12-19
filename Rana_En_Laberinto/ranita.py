@@ -2,13 +2,11 @@ from random import randint
 from time import time
 # if __name__ == '__main__':
 
-# first_multiple_input = input("Rows, columns and tunels: ").rstrip().split()
-
 #? Input ask
-# n = int(first_multiple_input[0])
-# m = int(first_multiple_input[1])
-k = 0
-# k = int(first_multiple_input[2])
+first_multiple_input = input("Rows, columns and tunels: ").rstrip().split()
+n = int(first_multiple_input[0])
+m = int(first_multiple_input[1])
+k = int(first_multiple_input[2])
 
 
 #! ---Start--- Board setup
@@ -21,38 +19,38 @@ print("W: Free space")
 
 possibilities = ["#", "a", "m", "%"]
 
-#! TEST ONLY
-board = [
-['#', '#', '#', '#', '#', '#'],
-['#', '#', 'a', 'm', '%', '#'],
-['#', '', (4, 4), '#', '#', '#'],
-['#', '%', '', '#', '', '#'],
-['#', '#', '#', '#', (2, 2), '#'],
-['#', '#', '#', '#', '#', '#']
-]  #TODO: ONLY TEST PURPOSES. REMOVE
+# #! TEST ONLY
+# board = [
+# ['#', '#', '#', '#', '#', '#'],
+# ['#', '#', 'a', 'm', '%', '#'],
+# ['#', '', (4, 4), '#', '#', '#'],
+# ['#', '%', '', '#', '', '#'],
+# ['#', '#', '#', '#', (2, 2), '#'],
+# ['#', '#', '#', '#', '#', '#']
+# ]
 
 #? Board completion
-# board = []
-# board.append(["#" for _ in range(m + 2)])
+board = []
+board.append(["#" for _ in range(m + 2)])
 
-# #? Adding rows
-# for n_itr in range(n):
-#     row_list = input("Type row: ").rstrip().casefold().split(maxsplit = m)
-#     row_obstacles = []
+#? Adding rows
+for n_itr in range(n):
+    row_list = input("Type row: ").rstrip().casefold().split(maxsplit = m)
+    row_obstacles = []
 
-#     row_obstacles.append("#")
-#     for space in row_list:
-#         if space in possibilities:
-#             row_obstacles.append(space)
-#         else:
-#             row_obstacles.append("")
+    row_obstacles.append("#")
+    for space in row_list:
+        if space in possibilities:
+            row_obstacles.append(space)
+        else:
+            row_obstacles.append("")
 
-#     row_obstacles.append("#")
+    row_obstacles.append("#")
 
-#     board.append(row_obstacles)
+    board.append(row_obstacles)
 
 
-# board.append(["#" for _ in range(m + 2)])
+board.append(["#" for _ in range(m + 2)])
 
 #? TP setup
 for k_itr in range(k):
