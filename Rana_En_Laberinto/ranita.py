@@ -128,11 +128,20 @@ def resultOfPath(x: int):
         situation = moveFrog()
         if situation == "blocked":
             return False
+
         check = checkFrog()
         if check == "mine":
             return False
-        
-        
+
+        elif check == "exit":
+            return True
+
+        elif check == "tp":
+            place = tuple(frog)
+            for i in range(2):
+                frog[i] == board[place[0]][place[1]][i]
+
+
 
 
 
