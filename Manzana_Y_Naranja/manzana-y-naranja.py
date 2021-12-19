@@ -24,7 +24,9 @@ def countApplesAndOranges(s, t, a, b, apples, oranges):
     for orange in oranges:
         if s <= b + orange <= t:
             t_oranges += 1
-    pass
+
+    print("Apples: {}".format(t_apples))
+    print("Oranges: {}".format(t_oranges))
 
 if __name__ == '__main__':
     first_multiple_input = input("House x1 and x2: ").rstrip().split()
