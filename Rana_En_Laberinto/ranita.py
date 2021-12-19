@@ -1,8 +1,4 @@
-import math
-import os
-import random
-import re
-import sys
+from random import randint
 # if __name__ == '__main__':
 
 # first_multiple_input = input("Rows, columns and tunels: ").rstrip().split()
@@ -86,6 +82,7 @@ print(board)
 
 
 #! ---Start--- Frog movement
+print(frog)
 
 moves_list = [(0, 1), (0, -1), (1, 0), (-1, 0)]
 possible_moves = [[frog[i] + move[i] for i in range(2)] for move in moves_list]
@@ -96,6 +93,12 @@ for move in possible_moves:
         possible_moves.remove(move)
 
 print(possible_moves)
+
+choose_move = randint(0, len(possible_moves) - 1)
+
+frog = list(possible_moves[choose_move])
+
+print(frog)
 
 
 
