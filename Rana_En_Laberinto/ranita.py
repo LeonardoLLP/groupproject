@@ -93,6 +93,9 @@ def moveFrog():
 
     print(possible_moves)
 
+    if len(possible_moves) == 0:
+        return "blocked"
+
     choose_move = randint(0, len(possible_moves) - 1)
 
     for i in range(2):
@@ -101,8 +104,35 @@ def moveFrog():
     print(frog)
     print()
 
-for _ in range(10):
-    moveFrog()
+    return "free"
+
+
+
+#! ---End--- Frog movement
+
+
+#! ---Start--- Frog in exit or mine
+
+def checkFrog():
+    place_check = board[frog[0]][frog[1]]
+    if place_check == "m":
+        return "mine"
+    elif place_check == "%":
+        return "exit"
+    elif type(place_check) == "tuple":
+        return "tp"
+
+# x: possible moves to complete the laberinth
+def resultOfPath(x: int):
+    for _ in range(x):
+        situation = moveFrog()
+        if situation == "blocked":
+            return False
+        check = checkFrog()
+        if check == "mine":
+            return False
+        
+        
 
 
 
