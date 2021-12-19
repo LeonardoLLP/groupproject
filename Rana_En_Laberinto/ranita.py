@@ -49,5 +49,9 @@ Por ahora, obviaremos repeticiones de casillas. La rana no puede volver a su mis
 Sería como no haber empezado, y como puede pasar con cada casilla, lo obviamos. Sin embargo, incluimos ir a una casilla de otro camino como válido, sumando la probabilidad
 del camino del que venimos.
 
+
+Opción dos: hacer muchas simulaciones y hallar dividir salidas / simulaciones.
+
+Probablemente lo más razonable de hacer dado que hay que entregarlo en unas horas.
 """
 
