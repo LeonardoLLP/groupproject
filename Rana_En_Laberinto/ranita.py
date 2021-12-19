@@ -11,8 +11,18 @@ n = int(first_multiple_input[0])
 m = int(first_multiple_input[1])
 k = int(first_multiple_input[2])
 
+#! Board setup
+# Legend
+print("#: Obstacle")
+print("A: Start")
+print("M: Mine")
+print("%: Exit")
+print("W: Free space")
+
+board = []
+board.append([])
 for n_itr in range(n):
-    row = input()
+    row_chars = input("Type ")
     # Write your code here
     pass
 
