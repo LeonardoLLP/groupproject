@@ -23,6 +23,7 @@ if __name__ == "__main__":
     grades = []
     for _ in range(grades_count):
         grades_item = int(input("Grade: ").strip())
+        grades.append(grades_item)
 
     result = gradingStudents(grades)
 
