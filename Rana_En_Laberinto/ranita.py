@@ -94,16 +94,13 @@ def resetFrog():
 
 
 #! --- Frog movement
-print(frog)
 
 moves_list = [(0, 1), (0, -1), (1, 0), (-1, 0)]
 
 def moveFrog():
-    print(frog)
     possible_moves = [[frog[i] + move[i] for i in range(2)] for move in moves_list]
     final_moves = []
 
-    print(possible_moves)
     # Remove not available moves
     for move in possible_moves:
         try:
@@ -115,7 +112,6 @@ def moveFrog():
             continue
         final_moves.append(move)
 
-    print(final_moves)
 
     if len(final_moves) == 0:
         return "blocked"
@@ -124,9 +120,6 @@ def moveFrog():
 
     for i in range(2):
         frog[i] = final_moves[choose_move][i]
-
-    print(frog)
-    print()
 
     return "free"
 
@@ -146,7 +139,6 @@ def checkFrog():
 
 # x: possible moves to complete the laberinth
 def resultOfPath(x: int):
-    print("-" * 40)
     resetFrog()
     for _ in range(x):
         situation = moveFrog()
@@ -180,7 +172,9 @@ for _ in range(t_plays):
 print(time() - s_time)
 
 
-print(plays)
+t_time = time()
+
+# print(plays)
 print(board)
 printBoard()
 
@@ -191,5 +185,6 @@ escape_prob = exited / (t_plays - plays.count(None))
 
 print("{:10}".format(escape_prob))
 
+print(time() - s_time)
 
 #! Multiprocessing module para meter más repeticiones
