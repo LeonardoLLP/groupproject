@@ -5,10 +5,11 @@ import re
 import sys
 # if __name__ == '__main__':
 
-first_multiple_input = input("Rows, columns and tunels: ").rstrip().split()
+# first_multiple_input = input("Rows, columns and tunels: ").rstrip().split()
 
-n = int(first_multiple_input[0])
-m = int(first_multiple_input[1])
+#? Input ask
+# n = int(first_multiple_input[0])
+# m = int(first_multiple_input[1])
 # k = int(first_multiple_input[2])
 
 #! ---Start--- Board setup
@@ -19,43 +20,65 @@ print("M: Mine")
 print("%: Exit")
 print("W: Free space")
 
-possibilities = ["#", "A", "M", "%"]
+possibilities = ["#", "a", "m", "%"]
+board = [
+['#', '#', '#', '#', '#', '#'],
+['#', '#', 'a', 'm', '%', '#'],
+['#', '', '', '#', '#', '#'],
+['#', '%', '', '#', '#', '#'],
+['#', '#', '#', '%', 'm', '#'],
+['#', '#', '#', '#', '#', '#']
+]  #TODO: ONLY TEST PURPOSES. REMOVE
 
-board = []
-board.append(["#" for _ in range(m + 2)])
+#? Board completion
+# board = []
+# board.append(["#" for _ in range(m + 2)])
 
-#* Adding rows
-for n_itr in range(n):
-    row_list = input("Type row: ").rstrip().casefold().split(maxsplit = m)
-    row_obstacles = []
+# #? Adding rows
+# for n_itr in range(n):
+#     row_list = input("Type row: ").rstrip().casefold().split(maxsplit = m)
+#     row_obstacles = []
 
-    row_obstacles.append("#")
-    for space in row_list:
-        if space in possibilities:
-            row_obstacles.append(space)
-        else:
-            row_obstacles.append("")
+#     row_obstacles.append("#")
+#     for space in row_list:
+#         if space in possibilities:
+#             row_obstacles.append(space)
+#         else:
+#             row_obstacles.append("")
 
-    row_obstacles.append("#")
+#     row_obstacles.append("#")
 
-    board.append(row_obstacles)
+#     board.append(row_obstacles)
 
 
-board.append(["#" for _ in range(m + 2)])
+# board.append(["#" for _ in range(m + 2)])
 
-# Print board
-for row in board:
-    print("[", end="")
-    for index in range(len(row)):
-        if index != len(row) - 1:
-            print("{:6}".format("\'" + row[index] + "\', "), end="")
-        else:
-            print("{:6}".format("\'" + row[index] + "\'"), end="")
-    print("]")
+#? Print board
+# for row in board:
+#     print("[", end="")
+#     for index in range(len(row)):
+#         if index != len(row) - 1:
+#             print("{:6}".format("\'" + row[index] + "\', "), end="")
+#         else:
+#             print("{:6}".format("\'" + row[index] + "\'"), end="")
+#     print("]")
+
+print(board)
 
 #! ---End--- Board setup
 
 
+#! ---Start--- Frog setup
+start = None
+for index in range(len(board)):
+    if "a" in board[index]:
+        start = (index, board[index].index("a"))
+
+print(start)
+
+
+
+#? TP setup
 # for k_itr in range(k):
 #     second_multiple_input = input().rstrip().split()
 #     i1 = int(second_multiple_input[0])
@@ -65,9 +88,10 @@ for row in board:
 #     # Write your code here
 #     pass
 
+
 # Write your code here
 
-"""Tengo una idea para que esto funcione pero está mmuy loca. Intentaré explicarla.
+"""Tengo una idea para que esto funcione pero está muy loca. Intentaré explicarla.
 
 La ranita se mueve al azar a cada una de sus casillas adyacentes posibles. Lo que vamos a hacer es ir anotando:
 
