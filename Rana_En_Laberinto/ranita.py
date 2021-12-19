@@ -54,14 +54,14 @@ board = [
 # board.append(["#" for _ in range(m + 2)])
 
 #? TP setup
-# for k_itr in range(k):
-#     second_multiple_input = input().rstrip().split()
-#     i1 = int(second_multiple_input[0])
-#     j1 = int(second_multiple_input[1])
-#     i2 = int(second_multiple_input[2])
-#     j2 = int(second_multiple_input[3])
-#     # Write your code here
-#     pass
+for k_itr in range(k):
+    second_multiple_input = input("x1, y1, x2, y2: ").rstrip().split()
+    i1 = int(second_multiple_input[0])
+    j1 = int(second_multiple_input[1])
+    i2 = int(second_multiple_input[2])
+    j2 = int(second_multiple_input[3])
+    board[i1][j1] = (i2, j2)
+    board[i2][j2] = (i1, j1)
 
 
 def printBoard():
