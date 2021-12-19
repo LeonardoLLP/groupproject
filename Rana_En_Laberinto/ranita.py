@@ -7,6 +7,7 @@ from time import time
 #? Input ask
 # n = int(first_multiple_input[0])
 # m = int(first_multiple_input[1])
+k = 0
 # k = int(first_multiple_input[2])
 
 
@@ -100,24 +101,29 @@ moves_list = [(0, 1), (0, -1), (1, 0), (-1, 0)]
 def moveFrog():
     print(frog)
     possible_moves = [[frog[i] + move[i] for i in range(2)] for move in moves_list]
+    final_moves = []
 
+    print(possible_moves)
     # Remove not available moves
     for move in possible_moves:
         try:
             if board[move[0]][move[1]] == "#":
-                possible_moves.remove(move)
+                continue
+            elif move[0] < 0 or move[1] < 0:
+                continue
         except:
-            possible_moves.remove(move)
+            continue
+        final_moves.append(move)
 
-    print(possible_moves)
+    print(final_moves)
 
-    if len(possible_moves) == 0:
+    if len(final_moves) == 0:
         return "blocked"
 
-    choose_move = randint(0, len(possible_moves) - 1)
+    choose_move = randint(0, len(final_moves) - 1)
 
     for i in range(2):
-        frog[i] = possible_moves[choose_move][i]
+        frog[i] = final_moves[choose_move][i]
 
     print(frog)
     print()
@@ -164,11 +170,11 @@ def resultOfPath(x: int):
 
 
 #! --- Code
-
+t_plays = 10000
 plays = []
 
 s_time = time()
-for _ in range(10):
+for _ in range(t_plays):
     plays.append(resultOfPath(100))
 
 print(time() - s_time)
@@ -180,3 +186,10 @@ printBoard()
 
 print(type((1, 2)) == tuple)
 
+exited = plays.count(True)
+escape_prob = exited / (t_plays - plays.count(None))
+
+print("{:10}".format(escape_prob))
+
+
+#! Multiprocessing module para meter más repeticiones
