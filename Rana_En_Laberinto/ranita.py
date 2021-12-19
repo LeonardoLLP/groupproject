@@ -160,7 +160,7 @@ def resultOfPath(x: int):
 
 
 #! --- Code
-t_plays = 1000000
+t_plays = 10
 plays = []
 
 print("Please wait while we process the answer ...")
@@ -172,7 +172,11 @@ for _ in range(t_plays):
 printBoard()
 
 exited = plays.count(True)
-escape_prob = exited / (t_plays - plays.count(None))
+#escape_prob = exited / (t_plays - plays.count(None))
+if(t_plays - plays.count(None) != 0):
+    escape_prob = exited / (t_plays - plays.count(None))
+else:
+    escape_prob = 0
 
 print("Probability that the frog escapes: {:10}".format(escape_prob))
 
