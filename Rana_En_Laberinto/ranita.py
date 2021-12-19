@@ -76,6 +76,27 @@ for index in range(len(board)):
 
 print(start)
 
+frog = list(start)
+board[start[0]][start[1]] = ""
+
+
+print(board)
+
+#! ---End--- Frog setup
+
+
+#! ---Start--- Frog movement
+
+moves_list = [(0, 1), (0, -1), (1, 0), (-1, 0)]
+possible_moves = [[frog[i] + move[i] for i in range(2)] for move in moves_list]
+print(possible_moves)
+
+for move in possible_moves:
+    if board[move[0]][move[1]] == "#":
+        possible_moves.remove(move)
+
+print(possible_moves)
+
 
 
 #? TP setup
