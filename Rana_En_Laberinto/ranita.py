@@ -60,10 +60,8 @@ board = [
 #     print("]")
 
 
-#! ---End--- Board setup
 
-
-#! ---Start--- Frog setup
+#! --- Frog setup 
 start = None
 for index in range(len(board)):
     if "a" in board[index]:
@@ -74,10 +72,7 @@ board[start[0]][start[1]] = ""
 
 
 
-#! ---End--- Frog setup
-
-
-#! ---Start--- Frog movement
+#! --- Frog movement
 print(frog)
 
 moves_list = [(0, 1), (0, -1), (1, 0), (-1, 0)]
@@ -108,10 +103,8 @@ def moveFrog():
 
 
 
-#! ---End--- Frog movement
 
-
-#! ---Start--- Frog in exit or mine
+#! --- Frog in exit or mine
 
 def checkFrog():
     place_check = board[frog[0]][frog[1]]
@@ -140,6 +133,12 @@ def resultOfPath(x: int):
             place = tuple(frog)
             for i in range(2):
                 frog[i] == board[place[0]][place[1]][i]
+
+    return None
+
+plays = []
+
+
 
 
 
